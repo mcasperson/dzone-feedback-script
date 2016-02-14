@@ -12,8 +12,8 @@ jQuery(function() {
     var selector2 = "#header > tbody > tr:nth-child(2) > td > table:nth-child(1) > tbody > tr:nth-child(2) > td > table";
     var selector3 = "#header > tbody > tr:nth-child(2) > td > table:nth-child(2) > tbody > tr:nth-child(2) > td > table";
 
-    console.log("hi");
-    window.setTimeout(function() {
+//    console.log("script marker");
+//    window.setTimeout(function() {
 
         var articles = [];
 
@@ -40,7 +40,7 @@ jQuery(function() {
                 articles.push(articleDetails);
 
                 var newRow = jQuery('<tr></tr>');
-                var newCol = jQuery('<td colspan="3"></td>');
+                var newCol = jQuery('<td colspan="3" style="padding-bottom: 5px; font-family: sans-serif"></td>');
                 var voteTrue = jQuery('<input type="radio" name="vote' + articles.length + '" value="true" checked="true">');
                 var voteFalse = jQuery('<input type="radio" name="vote' + articles.length + '" value="false">');
                 var reason = jQuery('<input type="text" style="width: 350px">');
@@ -98,5 +98,5 @@ jQuery(function() {
 
             window.open('mailto:ering@dzone.com?subject=Article%20Feedback&body=' + message);
         });
-    }, 5000);
+   // }, 5000);
 });
