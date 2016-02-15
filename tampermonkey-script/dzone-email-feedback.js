@@ -77,9 +77,9 @@ jQuery(function() {
                 message += article.title;
                 message += "%0D%0A";
                 if (jQuery('[name=' + article.voteTrue.attr('name') + ']:checked').val() === 'true') {
-                    message += "I would not click this article. ";
-                } else {
                     message += "I would click this article. ";
+                } else {
+                    message += "I would not click this article. ";
                 }
                 message += article.reason.val();
                 message += "%0D%0A%0D%0A";
