@@ -32,12 +32,7 @@ jQuery(function() {
             var columns = jQuery(row).find('td');
             if (columns.length === 2) {
 
-                var articleDetails = {
-                    title: jQuery(columns[1]).find('p > a:nth-child(1)').text(),
-                    vote: false,
-                    reason: ""
-                };
-                articles.push(articleDetails);
+
 
                 var newRow = jQuery('<tr></tr>');
                 var newCol = jQuery('<td colspan="3" style="padding-bottom: 5px; font-family: sans-serif"></td>');
@@ -51,21 +46,15 @@ jQuery(function() {
                 newCol.append(voteFalse);
                 newCol.append(jQuery("<span>No </span>"));
                 newCol.append(reason);
-
-                voteTrue.change(function(element) {
-                    articleDetails.vote = jQuery(this).is(":checked");
-                });
-
-                voteFalse.change(function(element) {
-                    articleDetails.vote = !jQuery(this).is(":checked");
-                });
-
-                reason.keydown(function(element) {
-                    articleDetails.reason = jQuery(this).val();
-                });
-
                 newRow.insertAfter(jQuery(row));
 
+                var articleDetails = {
+                    title: jQuery(columns[1]).find('p > a:nth-child(1)').text(),
+                    voteTrue: voteTrue,
+                    voteFalse: voteFalse,
+                    reason: reason
+                };
+                articles.push(articleDetails);
             }
         });
 
@@ -87,12 +76,12 @@ jQuery(function() {
 
                 message += article.title;
                 message += "%0D%0A";
-                if (article.vote) {
-                    message += "I would click this article. ";
+                if (jQuery('[name=' + article.voteTrue.attr('name') + ']:checked').val() === 'true') {
+                    message += "I would not click this article. ";
                 } else {
                     message += "I would click this article. ";
                 }
-                message += article.reason;
+                message += article.reason.val();
                 message += "%0D%0A%0D%0A";
             }
 
