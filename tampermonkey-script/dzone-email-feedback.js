@@ -85,7 +85,7 @@ jQuery(function() {
                 message += "%0D%0A%0D%0A";
             }
 
-            window.open('mailto:ering@dzone.com;Andrep@dzone.com;johne@dzone.com?subject=Article%20Feedback&body=' + message);
+            window.open('mailto:ering@dzone.com,Andrep@dzone.com,johne@dzone.com?subject=Article%20Feedback&body=' + message);
         });
    // }, 5000);
 });
