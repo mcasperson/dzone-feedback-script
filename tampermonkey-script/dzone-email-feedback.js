@@ -49,7 +49,7 @@ jQuery(function() {
                 newRow.insertAfter(jQuery(row));
 
                 var articleDetails = {
-                    title: jQuery(columns[1]).find('p > a:nth-child(1)').text(),
+                    title: encodeURIComponent(jQuery(columns[1]).find('p > a:nth-child(1)').text()),
                     voteTrue: voteTrue,
                     voteFalse: voteFalse,
                     reason: reason
@@ -81,7 +81,7 @@ jQuery(function() {
                 } else {
                     message += "No, I would not click this article. ";
                 }
-                message += article.reason.val();
+                message += encodeURIComponent(article.reason.val());
                 message += "%0D%0A%0D%0A";
             }
 
