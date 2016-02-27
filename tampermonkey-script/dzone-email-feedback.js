@@ -2,8 +2,10 @@
 // @name        DZone Email Feedback
 // @namespace   http://mailer.dzone.com
 // @include     http://mailer.dzone.com/*
-// @version     1
+// @version     1.01
 // @require http://code.jquery.com/jquery-latest.js
+// @downloadURL https://raw.githubusercontent.com/mcasperson/dzone-feedback-script/master/tampermonkey-script/dzone-email-feedback.js
+// @updateURL https://raw.githubusercontent.com/mcasperson/dzone-feedback-script/master/tampermonkey-script/dzone-email-feedback.js
 // ==/UserScript==
 
 jQuery(function() {
